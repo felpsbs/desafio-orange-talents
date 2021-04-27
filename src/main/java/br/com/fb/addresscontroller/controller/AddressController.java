@@ -1,11 +1,13 @@
 package br.com.fb.addresscontroller.controller;
 
 import java.net.URI;
+import java.util.List;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +32,12 @@ public class AddressController {
 		address = service.save(address, userId);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(address.getId()).toUri();
 		return ResponseEntity.created(uri).build();
+	}
+	
+	@GetMapping(value = "/{userId}")
+	public ResponseEntity<List<Address>> find(@PathVariable Long userId) {
+		List<Address> addresses = service.find(userId);
+		return ResponseEntity.ok().body(addresses);
 	}
 	
 }

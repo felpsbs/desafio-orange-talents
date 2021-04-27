@@ -33,6 +33,7 @@ public class UserController {
 		return ResponseEntity.created(uri).build();
 	}
 	
+	// Extra
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<User> find(@PathVariable Long id) {
 		User user = service.find(id);

@@ -8,6 +8,8 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
+import org.hibernate.validator.constraints.br.CPF;
+
 import br.com.fb.addresscontroller.domain.User;
 import br.com.fb.addresscontroller.service.validation.InsertUser;
 
@@ -23,6 +25,7 @@ public class UserDto implements Serializable {
 	@NotEmpty(message = "Preenchimento obrigatório")
 	private String email;
 
+	@CPF(message = "CPF inválido")
 	@NotEmpty(message = "Preenchimento obrigatório")
 	private String cpf;
 

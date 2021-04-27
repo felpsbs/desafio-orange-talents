@@ -19,19 +19,14 @@ public class Address implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private String logradouro;
-	private Integer numero;
+	private String numero;
 	private String complemento;
 	private String bairro;
 	private String cep;
-
-	@ManyToOne
-	@JoinColumn(name = "state_id")
-	private State state;
-
-	@ManyToOne
-	@JoinColumn(name = "city_id")
-	private City city;
+	private String uf; 
+	private String cidade;
 
 	@JsonIgnore
 	@ManyToOne
@@ -54,11 +49,11 @@ public class Address implements Serializable {
 		this.logradouro = logradouro;
 	}
 
-	public Integer getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
-	public void setNumero(Integer numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 
@@ -78,20 +73,20 @@ public class Address implements Serializable {
 		this.bairro = bairro;
 	}
 
-	public State getState() {
-		return state;
+	public String getUf() {
+		return uf;
 	}
 
-	public void setState(State state) {
-		this.state = state;
+	public void setUf(String uf) {
+		this.uf = uf;
 	}
 
-	public City getCity() {
-		return city;
+	public String getCidade() {
+		return cidade;
 	}
 
-	public void setCity(City city) {
-		this.city = city;
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
 	}
 
 	public String getCep() {
