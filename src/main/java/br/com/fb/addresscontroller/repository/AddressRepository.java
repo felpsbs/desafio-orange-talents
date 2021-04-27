@@ -10,7 +10,7 @@ import br.com.fb.addresscontroller.domain.Address;
 import br.com.fb.addresscontroller.domain.User;
 
 @Repository
-public interface AddressRepository extends JpaRepository<Address, Long>{
+public interface AddressRepository extends JpaRepository<Address, Long> {
 
 	@Transactional(readOnly = true)
 	List<Address> findByUser(User user);

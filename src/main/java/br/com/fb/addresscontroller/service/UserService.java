@@ -20,7 +20,7 @@ public class UserService {
 	}
 	
 	public User find(Long id) {
-		User user = repository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Usuário não encontrado"));
+		User user = repository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Usuário '" + id + "' não encontrado"));
 		return user;
 	}
 
