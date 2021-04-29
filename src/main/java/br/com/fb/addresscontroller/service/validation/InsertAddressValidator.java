@@ -29,7 +29,7 @@ public class InsertAddressValidator implements ConstraintValidator<InsertAddress
 			addressDto.setCidade(addressClient.getLocalidade());
 			addressDto.setComplemento(addressClient.getComplemento());
 			addressDto.setLogradouro(addressClient.getLogradouro());
-			addressDto.setUf(addressClient.getUf());
+			addressDto.setEstado(addressClient.getUf());
 		} catch (FeignClientException e) {
 			list.add(new FieldMessage("cep", "CEP inválido"));
 		}

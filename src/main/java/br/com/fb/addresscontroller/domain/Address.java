@@ -19,13 +19,13 @@ public class Address implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String logradouro;
 	private String numero;
 	private String complemento;
 	private String bairro;
 	private String cep;
-	private String uf; 
+	private String estado;
 	private String cidade;
 
 	@JsonIgnore
@@ -73,12 +73,12 @@ public class Address implements Serializable {
 		this.bairro = bairro;
 	}
 
-	public String getUf() {
-		return uf;
+	public String getEstado() {
+		return estado;
 	}
 
-	public void setUf(String uf) {
-		this.uf = uf;
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 	public String getCidade() {
