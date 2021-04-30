@@ -1,6 +1,6 @@
 package br.com.fb.addresscontroller.client;
 
-public class AddressClient {
+public class AddressClientDto {
 
 	private String cep;
 	private String logradouro;

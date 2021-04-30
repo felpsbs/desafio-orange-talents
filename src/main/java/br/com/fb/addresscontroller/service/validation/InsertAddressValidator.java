@@ -8,7 +8,7 @@ import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import br.com.fb.addresscontroller.client.AddressClient;
+import br.com.fb.addresscontroller.client.AddressClientDto;
 import br.com.fb.addresscontroller.client.ViaCEPClient;
 import br.com.fb.addresscontroller.client.exception.FeignClientException;
 import br.com.fb.addresscontroller.controller.exception.FieldMessage;
@@ -24,7 +24,7 @@ public class InsertAddressValidator implements ConstraintValidator<InsertAddress
 		List<FieldMessage> list = new ArrayList<>();
 
 		try {
-			AddressClient addressClient = client.findAddressByCep(addressDto.getCep());
+			AddressClientDto addressClient = client.findAddressByCep(addressDto.getCep());
 			addressDto.setBairro(addressClient.getBairro());
 			addressDto.setCidade(addressClient.getLocalidade());
 			addressDto.setComplemento(addressClient.getComplemento());

@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface ViaCEPClient {
 	
 	@GetMapping("{cep}/json")
-    AddressClient findAddressByCep(@PathVariable("cep") String cep);
+    AddressClientDto findAddressByCep(@PathVariable("cep") String cep);
 
 }
