@@ -5,7 +5,6 @@ import java.io.Serializable;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-import br.com.fb.addresscontroller.domain.Address;
 import br.com.fb.addresscontroller.service.validation.InsertAddress;
 
 @InsertAddress
@@ -79,19 +78,6 @@ public class AddressDto implements Serializable {
 
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
-	}
-
-	public Address toAddress() {
-		Address address = new Address();
-		address.setCep(cep);
-		address.setNumero(numero);
-		address.setBairro(bairro);
-		address.setComplemento(complemento);
-		address.setLogradouro(logradouro);
-		address.setEstado(estado);
-		address.setCidade(cidade);
-
-		return address;
 	}
 
 }

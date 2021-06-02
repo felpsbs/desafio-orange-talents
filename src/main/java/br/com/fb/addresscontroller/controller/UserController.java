@@ -25,7 +25,7 @@ public class UserController {
 	
 	@PostMapping
 	public ResponseEntity<Void> save(@Valid @RequestBody UserDto userDto) {
-		User user = userDto.toUser();
+		User user = service.fromDto(userDto);
 		user = service.save(user);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(user.getId()).toUri();
 		return ResponseEntity.created(uri).build();

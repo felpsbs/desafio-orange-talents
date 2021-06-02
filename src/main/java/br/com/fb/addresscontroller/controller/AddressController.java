@@ -28,7 +28,7 @@ public class AddressController {
 
 	@PostMapping(value = "/{userId}")
 	public ResponseEntity<Address> save(@Valid @RequestBody AddressDto addressDto, @PathVariable Long userId) {
-		Address address = addressDto.toAddress();
+		Address address = service.fromDto(addressDto);
 		address = service.save(address, userId);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(address.getId()).toUri();
 		return ResponseEntity.created(uri).build();

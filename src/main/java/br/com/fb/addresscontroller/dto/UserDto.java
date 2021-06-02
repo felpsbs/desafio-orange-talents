@@ -10,7 +10,6 @@ import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.br.CPF;
 
-import br.com.fb.addresscontroller.domain.User;
 import br.com.fb.addresscontroller.service.validation.InsertUser;
 
 @InsertUser
@@ -63,16 +62,6 @@ public class UserDto implements Serializable {
 
 	public void setBirthDay(LocalDate birthDay) {
 		this.birthDay = birthDay;
-	}
-	
-	public User toUser() {
-		User user = new User();
-		user.setName(name);
-		user.setEmail(email);
-		user.setCpf(cpf);
-		user.setBirthDay(birthDay);
-		
-		return user;
 	}
 
 }
