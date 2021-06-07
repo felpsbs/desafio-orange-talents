@@ -1,10 +1,10 @@
-![title](ot.jpeg)
+![title](img/ot.jpeg)
 
 ***
 ## :bulb: Sobre o desafio
 
 
-- Desafio realizado para o programa [Orange Talents](https://www.zup.com.br/orange-talents) que consiste em construir uma API REST para controle de endereços de usuários.
+- Desafio realizado para o programa [Orange Talents](https://www.zup.com.br/orange-talents)  da [Zup](https://www.zup.com.br/) que consiste em construir uma API REST para controle de endereços de usuários.
 
 - Além disso, um desafio a mais foi dado: integrar o controlador de endereços com a [API da Viacep](https://viacep.com.br/) usando Spring-Cloud-Feign.
 ***
